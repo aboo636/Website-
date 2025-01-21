@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaubong Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .game-board {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .game-board div {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            background-color: #ddd;
+            text-align: center;
+            line-height: 50px;
+            font-size: 18px;
+            border-radius: 50%;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Chào Mừng đến với Gaubong Game</h1>
+</header>
+
+<nav>
+    <a href="#home">Trang Chủ</a>
+    <a href="#play">Chơi Ngay</a>
+    <a href="#contact">Liên Hệ</a>
+</nav>
+
+<div class="content" id="home">
+    <h2>Giới Thiệu</h2>
+    <p>Chơi các trò chơi thú vị ngay trên trang web của chúng tôi!</p>
+    <button onclick="startGame()">Bắt Đầu Chơi</button>
+</div>
+
+<div class="content" id="play">
+    <h2>Bảng Số Lô Tô</h2>
+    <div class="game-board" id="gameBoard"></div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Gaubong Game. Tất cả các quyền được bảo vệ.</p>
+</footer>
+
+<script>
+    function startGame() {
+        alert("Chúc bạn chơi vui vẻ!");
+        generateNumbers();
+    }
+
+    function generateNumbers() {
+        let board = document.getElementById("gameBoard");
+        board.innerHTML = '';
+        for (let i = 1; i <= 50; i++) {
+            let div = document.createElement("div");
+            div.textContent = i;
+            board.appendChild(div);
+        }
+    }
+</script>
+
+</body>
+</html>
